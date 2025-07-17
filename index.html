@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Портфолио</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="description" content="Путешествия в Северную Африку">
+  <meta name="keywords" content="Путешествия, Северная, Африка">
+  <meta name="author" content="Курченко Матвей">
+</head>
+<body>
+  <script src="script.js"  defer></script>
+
+  <header id = "header">
+    <nav>
+      <ul class="menu">
+        <li><a href="#start">В начало</a></li>
+        <li><a href="#tours">Туры</a></li>
+        <li><a href="#list_of_photo">Снимки путешествий</a></li>
+        <li><a href="#team">Наша команда</a></li>
+        <li><a href="#faq">Вопросы и ответы</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="bg-image-block" id = "start">
+    <h1>Путешествие в Северную Африку</h1>
+    <div class="contact_us">
+      <h2>Свяжитесь с нами</h2>
+      <a href="#"><img src="telegram.svg" alt="tg"></a>
+    </div>
+  </section>
+
+  <!-- <section class="bg-image-block">
+    <h1>Путешествие в Северную Африку</h1>
+    <svg class="bg-wave" viewBox="0 0 1440 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#9da16c" fill-opacity="1" d="M 0,400 L 0,150 C 87.24401913875599,140.8133971291866 174.48803827751198,131.6267942583732 275,130 C 375.511961722488,128.3732057416268 489.291866028708,134.30622009569376 576,149 C 662.708133971292,163.69377990430624 722.3444976076555,187.1483253588517 829,178 C 935.6555023923445,168.8516746411483 1089.33014354067,127.10047846889951 1199,117 C 1308.66985645933,106.89952153110049 1374.334928229665,128.44976076555025 1440,150 L 1440,400 L 0,400 Z"></path>
+    </svg>
+  </section> -->
+
+  <section class="cards" id = "tours">
+    <div class="card">
+      <img src="lion2.jpg" alt="Египет">
+      <div class="content">
+        <h3>Знакомство с Египтом</h3>
+
+        <p><span class="underline">Групповой тур:</span> 28 декабря – 6 января</p>
+
+        <p><span class="underline">Набор группы:</span> 30 ноября - 8 декабря</p>
+        
+        <a href="#" class="btn">ПОДРОБНЕЕ</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="zebra2.jpg" alt="Марокко">
+      <div class="content">
+        <h3>Экскурсия в Марокко</h3>
+
+        <p><span class="underline">Индивидуальный тур:</span> 3 - 12 октября</p>
+
+        <p><span class="underline">Сбор заявок:</span> 2 - 20 сентября</p>
+
+        <a href="#" class="btn">ПОДРОБНЕЕ</a>
+      </div>
+    </div>
+  </section>
+
+  <ul class="list_of_photo" id = "list_of_photo">
+    <li class="photo">
+      <img src="img1.jpg" alt="Лола">
+    </li>
+    <li class="photo">
+      <img src="img2.jpg" alt="Лола">
+    </li>
+    <li class="photo">
+      <img src="img3.jpg" alt="Лола">
+    </li>
+    <li class="photo">
+      <img src="img4.jpg" alt="Лола">
+    </li>
+  </ul>
+
+  <!-- волна -->
+
+  <!-- <div class="top-block"></div>
+
+  <svg class="wave" viewBox="0 0 1440 150" preserveAspectRatio="none">
+    <path fill="#9da16c" d="M0,75 Q360,0 720,75 T1440,75 V150 H0 Z"/>
+  </svg> -->
+
+
+
+  <section class="team" id = "team">
+    <h2>Команда<br>Cool Trip Makers</h2>
+
+    <div class="team-members">
+      <div class="member">
+        <img src="ava.jpg" alt="Валерия">
+        <h3>Валерия</h3>
+        <p>
+          Координатор туров.<br>
+          Скоординирует все пути, ведущие вас к незабываемым впечатлениям!<br>
+        </p>
+        <div class="socials">
+          <a href="#"><img src="vk_1.svg" alt="vk_1"></a>
+          <a href="#"><img src="telegram.svg" alt="tg"></a>
+        </div>
+      </div>
+
+      <div class="member">
+        <img src="ava.jpg" alt="Анастасия">
+        <h3>Анастасия</h3>
+        <p>
+          Заботливо и с полной гарантией создаёт маршруты мечты! Сопровождение групповых туров и менеджмент чатов.
+        </p>
+        <div class="socials">
+          <a href="#"><img src="telegram.svg" alt="tg"></a>
+        </div>
+      </div>
+
+      <div class="member">
+        <img src="ava.jpg" alt="Joram">
+        <h3>Joram</h3>
+        <p>
+          Англоязычный гид по Северной Африке. Найдет всех львов и леопардов!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id = "faq">
+    <h2>Частые вопросы</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">Путешествие в Северную Африку – это безопасно?</button>
+      <div class="faq-answer">
+        <p>Да, при соблюдении правил и в сопровождении опытного гида — абсолютно.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">А где мы будем жить?</button>
+      <div class="faq-answer">
+        <p>Во время путешествия вы будете жить в комфортных домиках.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" id = "footer">
+    <div class="footer-content">
+      <strong>Cool trip makers</strong><br>
+      © 2025
+    </div>
+  </footer>
+
+</body>
+</html>

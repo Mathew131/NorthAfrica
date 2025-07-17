@@ -1,0 +1,355 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* меню */
+
+header {
+  background: #d6ddc7;
+  padding: 2vh 0vw 2vh 6vw;
+  width: 100%;
+  position: fixed;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* главная картинка, волна - снизу файла */
+
+.bg-image-block {
+  width: 100%;
+  height: 300px;
+  background-image: url('travel.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.bg-image-block h1 {
+
+  font-size: 26px;
+}
+
+.bg-image-block h2 {
+  font-size: 16px;
+}
+
+.bg-image-block a img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.contact_us {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact_us img {
+  margin: 5px 0px 0px 20px;
+}
+
+.bg-image-block h1 {
+  margin: 45px 0px 0px 0px;
+}
+/* карточки */
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  padding: 40px;
+  background: #9da16c;
+}
+
+.card {
+  width: 300px;
+  background: #fef3e0;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card .content {
+  padding: 16px;
+  font-family: sans-serif;
+  color: #000;
+}
+
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.card p {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.card .btn {
+  display: inline-block;
+  background: #ff4001;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.string {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+/* фотки Африки */
+
+.list_of_photo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* padding: 0; */
+  padding: 60px 9px 60px 9px;
+  list-style: none;
+  gap: 10px;
+  background: #b19a64;
+  /* background: #9da16c; */
+}
+
+.photo {
+  width: calc(25vw - 5px - 10px - 3px);
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* team */
+
+.team {
+  background-color: #9da16c;
+  /* background-color: #7a8552; */
+  padding: 60px 20px;
+  text-align: center;
+  font-family: sans-serif;
+  color: #000;
+}
+
+.team h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.member {
+  width: 280px;
+  background-color: transparent;
+  text-align: left;
+}
+
+.member img {
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+  object-fit: cover;
+}
+
+.member h3 {
+  font-size: 22px;
+  margin-top: 12px;
+  margin-bottom: 6px;
+}
+
+.member p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: white;
+  font-family: arial; /* выбрать, может быть взят с сайта */
+}
+
+.socials {
+  margin-top: 10px;
+}
+
+.socials a img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+/* FAQ */
+
+.faq {
+  background: #d6ddc7;
+  /* background: #e3ebcf; */
+  padding: 40px 100px;
+  font-family: sans-serif;
+}
+
+.faq h2 {
+  text-align: left;
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ccc;
+  padding: 16px 0;
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-question::after {
+  content: "+";
+  font-size: 24px;
+  transition: transform 0.3s;
+}
+
+.faq-question.active::after {
+  content: "×";
+  transform: rotate(0deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  /* transition: max-height 0.5s ease; */
+  font-size: 14px;
+  line-height: 1.5;
+  margin-top: 8px;
+}
+
+.faq-answer.open {
+  max-height: 50px;
+}
+
+/* footer */
+
+.footer {
+  background-color: #7b8561;
+  color: #000;
+  padding: 20px 0px 20px 0px;
+  font-family: sans-serif;
+  font-size: 14px;
+  height: 100px;
+
+  display: flex;  
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-content {
+  text-align: center;
+}
+
+
+
+
+/* .top-block {
+  background-color: #b59863;
+  height: 10px;
+}
+
+.wave {
+  display: block;
+  width: 100%;
+  height: 120px;
+  background-color: #b59863;
+}
+
+
+.bg-image-block {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  background-image: url('travel.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  overflow: hidden;
+}
+
+.bg-image-block h1 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+}
+
+.bg-image-block .bg-wave {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  display: block;
+}
+
+.after-block {
+  background: #7b8561;
+  padding: 40px 20px;
+  color: #000;
+} */
