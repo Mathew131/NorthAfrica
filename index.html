@@ -8,6 +8,7 @@
   <meta name="description" content="Путешествия в Северную Африку">
   <meta name="keywords" content="Путешествия, Северная, Африка">
   <meta name="author" content="Курченко Матвей">
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=3207a759-8710-4d74-9efc-3bb4aa2d18f8&lang=ru_RU"></script>
 </head>
 <body>
   <script src="script.js"  defer></script>
@@ -31,6 +32,9 @@
       <a href="#"><img src="telegram.svg" alt="tg"></a>
     </div>
   </section>
+
+
+  <div id="map" style="width: 100%; height: 400px;"></div>
 
   <!-- <section class="bg-image-block">
     <h1>Путешествие в Северную Африку</h1>
@@ -67,20 +71,31 @@
     </div>
   </section>
 
-  <ul class="list_of_photo" id = "list_of_photo">
-    <li class="photo">
-      <img src="img1.jpg" alt="Лола">
-    </li>
-    <li class="photo">
-      <img src="img2.jpg" alt="Лола">
-    </li>
-    <li class="photo">
-      <img src="img3.jpg" alt="Лола">
-    </li>
-    <li class="photo">
-      <img src="img4.jpg" alt="Лола">
-    </li>
-  </ul>
+  <section class="gallery">
+    <button class="gallery__btn gallery__btn--prev">‹</button>
+    <ul class="list_of_photo">
+      <li class="photo"><img src="img1.jpg" alt="Фото"></li>
+      <li class="photo"><img src="img2.jpg" alt="Фото"></li>
+      <li class="photo"><img src="img3.jpg" alt="Фото"></li>
+      <li class="photo"><img src="img4.jpg" alt="Фото"></li>
+      <li class="photo"><img src="img1.jpg" alt="Фото"></li>
+      <li class="photo"><img src="img2.jpg" alt="Фото"></li>
+      <li class="photo"><img src="img3.jpg" alt="Фото"></li>
+      <li class="photo"><img src="img4.jpg" alt="Фото"></li>
+    </ul>
+    <button class="gallery__btn gallery__btn--next">›</button>
+  </section>
+
+  <div id="photo-popup" class="popup hidden">
+    <div class="popup-content"></div>
+    <!-- <button class="popup-prev">‹</button>
+    <button class="popup-next">›</button> -->
+    <button class="popup-close">×</button>
+    <button class="popup-prev">‹</button>
+    <button class="popup-next">›</button>
+  </div>
+
+  
 
   <!-- волна -->
 
@@ -129,6 +144,27 @@
       </div>
     </div>
   </section>
+
+
+  <div class="form-background">
+    <div class="contact-form">
+      <div class="Label">
+        <p>Отправьте форму и мы с вами свяжемся</p>
+      </div>
+      
+      <form>
+        <input type="text" placeholder="Как к вам обращаться?" required>
+        <input type="text" placeholder="Username в telegram, если есть">
+        <input type="tel" placeholder="Номер телефона" required>
+        <input type="number" placeholder="Количество участников" required>
+        <input type="date" name="date" placeholder="Дата поездки" required>
+        <textarea placeholder="Дополнительные сведения" rows="4"></textarea>
+        <button type="submit">Отправить</button>
+      </form>
+    </div>
+  </div>
+
+
 
   <section class="faq" id = "faq">
     <h2>Частые вопросы</h2>
