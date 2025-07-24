@@ -76,9 +76,141 @@ header {
 .bg-image-block h1 {
   margin: 45px 0px 0px 0px;
 }
+
+/* яндекс карты */
+
+.description_tour {
+  display: flex;
+  flex-direction: column;
+}
+
+.short_description {
+  margin: auto;
+}
+
+.short_description p {
+  color: white;
+  font-size: 30;
+}
+
+.description_day {
+  padding: 2.5vw 2.5vw 2.5vh 2.5vw;
+  background: #9da16c;
+  display: flex;
+  flex-direction: row;
+}
+
+#map {
+  width: 50vw;
+  height: 55vh;
+  margin-left: auto;
+  
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: block;
+}
+
+
+.card {
+  width: 45vw;
+  height: 50vh;
+  margin: 0px 20px 0px 0px;
+  /* margin: 2.5vw 2.5vw 2.5vh 2.5vw; */
+  background: #fef3e0;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center; /*чтобы текст был по центру */
+  align-items: center; /*чтобы текст был по центру */
+}
+
+.card p {
+  text-align: center;
+  font-size: 15px;
+  margin: 0px 15px 0px 15px;
+}
+
+/* Описание поездки --------------------------------------------- */
+
+.trip-schedule {
+  background: #d6ddc7;
+  padding: 5vh 10vw;
+  font-family: sans-serif;
+}
+
+/* каждый день */
+.trip-day {
+  border-bottom: 1px solid #ccc;
+  padding: 16px 0;
+}
+
+/* заголовок дня — кликабельный, без внутреннего <span> для иконки */
+.trip-header {
+  width: 100%;
+  background: none;
+  border: none;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;    /* для ::after */
+}
+
+/* текст внутри: дата | заголовок */
+.trip-headline {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* псевдо‑иконка + */
+.trip-header::after {
+  content: "+";
+  font-size: 24px;
+  /* color: goldenrod; */
+  color: black;
+  transition: transform 0.3s;
+}
+
+/* когда открыто — × */
+.trip-header.active::after {
+  content: "×";
+}
+
+/* скрытый блок деталей */
+.trip-details {
+  max-height: 0;
+  overflow: hidden;
+  /* transition: max-height 0.5s ease; */
+  font-size: 14px;
+  line-height: 1.5;
+  margin-top: 8px;
+  padding-left: 20px;   /* выравнивание текста с заголовком */
+}
+
+/* открытие */
+.trip-details.open {
+  max-height: 1000px;
+}
+
+.trip-details p {
+  text-align: left;
+  font-size: 15px;
+  margin: 10px 10px 10px 10px;
+}
+
+
+
 /* карточки */
 
-.cards {
+/* .cards {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -140,7 +272,7 @@ header {
 
 .underline {
   text-decoration: underline;
-}
+} */
 
 /* фотки Африки */
 
@@ -415,7 +547,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .faq {
   background: #d6ddc7;
   /* background: #e3ebcf; */
-  padding: 40px 100px;
+  padding: 5vh 10vw;
   font-family: sans-serif;
 }
 
@@ -464,7 +596,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .faq-answer.open {
-  max-height: 50px;
+  max-height: 500px;
 }
 
 /* footer */

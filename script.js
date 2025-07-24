@@ -1,18 +1,16 @@
-questions = document.querySelectorAll('.faq-question');
-
-questions.forEach(q => {
-  q.addEventListener('click', () => {
-    q.classList.toggle('active');
-    answer = q.nextElementSibling;
-    answer.classList.toggle('open');
-  });
-});
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
+  let questions = document.querySelectorAll('.faq-question');
+
+  questions.forEach(q => {
+    q.addEventListener('click', () => {
+      q.classList.toggle('active');
+      let answer = q.nextElementSibling;
+      answer.classList.toggle('open');
+    });
+  });
+
+  // ---------------------------
+
   const popup = document.getElementById('photo-popup');
   const popupContent = popup.querySelector('.popup-content');
   const popupClose = popup.querySelector('.popup-close');
@@ -120,7 +118,99 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { passive: false });
 
   updateButtons();
+
+
+
+  // -----------------------------------------------
+
+
+
+  let form = document.querySelector("form");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    let inputs = form.querySelectorAll("input");
+    textarea = form.querySelector("textarea");
+
+    let name = inputs[0].value;
+    let username_tg = inputs[1].value.trim() !== '' ? inputs[1].value.trim() : 'Не указан';
+    let phone = inputs[2].value;
+    let count = inputs[3].value;
+    let data = inputs[4].value;
+    let comment = textarea.value;
+
+    // fetch("http://127.0.0.1:5000/send", {
+    fetch("https://tg-north-africa-bot.onrender.com/send", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        "Имя": name,
+        "Telegram": username_tg,
+        "Телефон": phone,
+        "Количество участников": count,
+        "Дата поездки": data,
+        "Комментарий": comment
+      })
+    })
+    .then(res => {
+      if (res.ok) {
+        alert("Успешно отправлено!");
+        form.reset();
+      } else {
+        alert("Ошибка при отправке");
+      }
+    });
+  });
+
+
+  
+  // карты --------------------------------------
+
+
+  ymaps.ready(function () {
+    const map = new ymaps.Map("map", {
+      center: [35.5, 10.3],
+      zoom: 7
+    });
+
+    const points = [
+      [36.8512, 10.2270],  // Аэропорт Тунис
+      [36.6709, 10.2276],  // Morneg
+      [36.8583, 10.3308],  // Карфаген
+      [36.8701, 10.3415],  // Сиди-бу-Саид
+      [36.4006, 10.1456],  // Загуан
+      [35.6781, 10.0963],  // Кайруан
+      [33.9206, 8.1336],   // Таузер
+      [33.4571, 9.0223],   // Дуз
+      [33.5423, 9.9636],   // Матмата
+      [35.5046, 11.0622],  // Махдия
+      [35.3, 10.71],       // Эль-Джем
+      [36.6709, 10.2276],  // Morneg
+      [36.8512, 10.2270]   // Аэропорт Тунис
+    ];
+
+    const route = new ymaps.multiRouter.MultiRoute({
+      referencePoints: points,
+      params: { routingMode: 'auto' }
+    }, {
+      boundsAutoApply: true
+    });
+
+    map.geoObjects.add(route);
+  });
+
+  // расписание -----------------------
+
+  // const headers = document.querySelectorAll('.trip-header');
+
+  document.querySelectorAll('.trip-header').forEach(h => {
+    h.addEventListener('click', () => {
+      h.classList.toggle('active');              // <-- переключаем крестик
+      h.nextElementSibling.classList.toggle('open');
+    });
+  });
 });
+
 
 
 // document.addEventListener('DOMContentLoaded', () => { // может убрать
@@ -196,85 +286,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
-  let form = document.querySelector("form");
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    let inputs = form.querySelectorAll("input");
-    textarea = form.querySelector("textarea");
-
-    let name = inputs[0].value;
-    let username_tg = inputs[1].value.trim() !== '' ? inputs[1].value.trim() : 'Не указан';
-    let phone = inputs[2].value;
-    let count = inputs[3].value;
-    let data = inputs[4].value;
-    let comment = textarea.value;
-
-    // fetch("http://127.0.0.1:5000/send", {
-    fetch("https://tg-north-africa-bot.onrender.com/send", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        "Имя": name,
-        "Telegram": username_tg,
-        "Телефон": phone,
-        "Количество участников": count,
-        "Дата поездки": data,
-        "Комментарий": comment
-      })
-    })
-    .then(res => {
-      if (res.ok) {
-        alert("Успешно отправлено!");
-        form.reset();
-      } else {
-        alert("Ошибка при отправке");
-      }
-    });
-  });
-});
 
 
 
-
-// карты
-
-
-ymaps.ready(function () {
-    const map = new ymaps.Map("map", {
-        center: [34.8, 10.2], // Примерный центр Туниса
-        zoom: 7
-    });
-
-    const points = [
-        "Аэропорт Тунис-Карфаген",
-        "Dar Salima Morneg",
-        "Медина Тунис",
-        "Карфаген",
-        "Сиди-бу-Саид",
-        "Загуан",
-        "Кайруан",
-        "Таузер",
-        "Дуз",
-        "Матмата",
-        "Тамезрет",
-        "Махдия",
-        "Эль-Джем",
-        "Morneg",
-        "Аэропорт Тунис-Карфаген"
-    ];
-
-    const multiRoute = new ymaps.multiRouter.MultiRoute({
-        referencePoints: points,
-        params: {
-            routingMode: 'auto' // 'auto', 'masstransit', 'pedestrian'
-        }
-    }, {
-        boundsAutoApply: true
-    });
-
-    map.geoObjects.add(multiRoute);
-});
 
 
