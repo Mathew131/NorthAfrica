@@ -169,34 +169,252 @@ document.addEventListener('DOMContentLoaded', () => {
 
   ymaps.ready(function () {
     const map = new ymaps.Map("map", {
-      center: [35.5, 10.3],
+      center: [35.15, 9.9],
       zoom: 7
     });
 
-    const points = [
-      [36.8512, 10.2270],  // Аэропорт Тунис
-      [36.6709, 10.2276],  // Morneg
-      [36.8583, 10.3308],  // Карфаген
-      [36.8701, 10.3415],  // Сиди-бу-Саид
-      [36.4006, 10.1456],  // Загуан
-      [35.6781, 10.0963],  // Кайруан
-      [33.9206, 8.1336],   // Таузер
-      [33.4571, 9.0223],   // Дуз
-      [33.5423, 9.9636],   // Матмата
-      [35.5046, 11.0622],  // Махдия
-      [35.3, 10.71],       // Эль-Джем
-      [36.6709, 10.2276],  // Morneg
-      [36.8512, 10.2270]   // Аэропорт Тунис
-    ];
 
-    const route = new ymaps.multiRouter.MultiRoute({
-      referencePoints: points,
-      params: { routingMode: 'auto' }
-    }, {
-      boundsAutoApply: true
+    let placemark;
+
+    placemark = new ymaps.Placemark(
+      [36.8512,10.2270],
+      { hintContent: 'Аэропорт Тунис-Карфаген' },
+      { 
+        // preset: 'islands#blueAirportCircleIcon',
+        // iconColor: 'goldenrod',
+        iconLayout: 'default#image',
+        iconImageHref: 'plane2.png',
+        iconImageSize: [30, 30],
+        iconImageOffset: [-12, -25],
+
+        // zIndexAuto: false,
+        // zIndex: 3000,
+      }
+    );
+    map.geoObjects.add(placemark);
+
+
+    // placemark = new ymaps.Placemark(
+    //   [36.611325, 10.270791],
+    //   { hintContent: 'Dar Salima à Morneg' },
+    //   { 
+    //     preset: 'islands#blueHotelCircleIcon',
+    //     iconColor: 'goldenrod',
+    //   }
+    // );
+    // map.geoObjects.add(placemark);
+
+
+    // placemark = new ymaps.Placemark(
+    //   [36.416234, 10.123692],
+    //   { hintContent: 'Dar Zaghouan' },
+    //   { 
+    //     preset: 'islands#blueHotelCircleIcon',
+    //     iconColor: 'goldenrod',
+    //   }
+    // );
+    // map.geoObjects.add(placemark);
+
+
+    // placemark = new ymaps.Placemark(
+    //   [33.922110, 8.127582],
+    //   { hintContent: 'Dar el Sultan' },
+    //   { 
+    //     preset: 'islands#blueHotelCircleIcon',
+    //     iconColor: 'goldenrod',
+    //   }
+    // );
+    // map.geoObjects.add(placemark);
+
+
+    // placemark = new ymaps.Placemark(
+    //   [33.460457, 9.024769],
+    //   { hintContent: 'Murmure de Civilisation' },
+    //   { 
+    //     preset: 'islands#blueHotelCircleIcon',
+    //     iconColor: 'goldenrod',
+    //   }
+    // );
+    // map.geoObjects.add(placemark);
+
+
+    // placemark = new ymaps.Placemark(
+    //   [35.524679, 11.038986],
+    //   { hintContent: 'Dar Sidi' },
+    //   { 
+    //     preset: 'islands#blueHotelCircleIcon',
+    //     iconColor: 'goldenrod',
+    //   }
+    // );
+    // map.geoObjects.add(placemark);
+
+    // // остановки ----------------------
+    // // 2 день
+    // placemark = new ymaps.Placemark(
+    //   [36.393769, 10.613612],
+    //   { hintContent: 'Hammamet Medina' },
+    //   { 
+        // iconLayout: 'default#image',
+        // iconImageHref: 'marker3.png',
+        // iconImageSize: [25, 25],
+        // iconImageOffset: [-12, -25]
+    //   }
+    // );
+    // map.geoObjects.add(placemark);
+
+    // placemark = new ymaps.Placemark(
+    //   [36.85776034373302, 10.329399786035959],
+    //   { hintContent: 'Римский театр в Карфагене' },
+    //   { 
+    //     iconLayout: 'default#image',
+    //     iconImageHref: 'marker3.png',
+    //     iconImageSize: [25, 25],
+    //     iconImageOffset: [-12, -25]
+    //   }
+    // );
+    // map.geoObjects.add(placemark);
+
+    // placemark = new ymaps.Placemark(
+    //   [36.870586, 10.346993],
+    //   { hintContent: 'город Сиди-Бу-Саид' },
+    //   { 
+    //     iconLayout: 'default#image',
+    //     iconImageHref: 'marker3.png',
+    //     iconImageSize: [25, 25],
+    //     iconImageOffset: [-12, -25]
+    //   }
+    // );
+    // map.geoObjects.add(placemark);
+
+    // // 3 день
+    // placemark = new ymaps.Placemark(
+    //   [36.405003, 10.145722],
+    //   { hintContent: 'город Загван' },
+    //   { 
+    //     iconLayout: 'default#image',
+    //     iconImageHref: 'marker3.png',
+    //     iconImageSize: [25, 25],
+    //     iconImageOffset: [-12, -25]
+    //   }
+    // );
+    // map.geoObjects.add(placemark);
+
+    // // 4 день
+    // placemark = new ymaps.Placemark(
+    //   [35.680695, 10.103492],
+    //   { hintContent: 'Мечеть Укба ибн Нафи' },
+    //   { 
+    //     iconLayout: 'default#image',
+    //     iconImageHref: 'marker3.png',
+    //     iconImageSize: [25, 25],
+    //     iconImageOffset: [-12, -25]
+    //   }
+    // );
+    // map.geoObjects.add(placemark);
+
+    // placemark = new ymaps.Placemark(
+    //   [35.680695, 10.103492],
+    //   { hintContent: 'Мечеть Укба ибн Нафи' },
+    //   { 
+    //     iconLayout: 'default#image',
+    //     iconImageHref: 'marker3.png',
+    //     iconImageSize: [25, 25],
+    //     iconImageOffset: [-12, -25]
+    //   }
+    // );
+    // map.geoObjects.add(placemark);
+
+    // placemark = new ymaps.Placemark(
+    //   [35.290241, 10.705382],
+    //   { hintContent: 'Амфитеатр в Эль-Джеме' },
+    //   { 
+    //     iconLayout: 'default#image',
+    //     iconImageHref: 'marker3.png',
+    //     iconImageSize: [25, 25],
+    //     iconImageOffset: [-12, -25]
+    //   }
+    // );
+    // map.geoObjects.add(placemark);
+
+
+
+    // ymaps.ready(() => {
+    //   const points = [
+    //     [36.8512, 10.2270],
+    //     [36.611325, 10.270791],
+    //     [36.416234, 10.123692],
+    //     [33.922110, 8.127582],
+    //     [33.460457, 9.024769],
+    //     [35.524679, 11.038986],
+    //     [36.393769, 10.613612],
+    //     [36.85776034373302, 10.329399786035959],
+    //     [36.870586, 10.346993],
+    //     [36.405003, 10.145722],
+    //     [35.680695, 10.103492],
+    //     [35.290241, 10.705382]
+    //   ];
+
+    //   // Создаём маршрут без видимых точек
+    //   const multiRoute = new ymaps.multiRouter.MultiRoute({
+    //     referencePoints: points,
+    //     params: { routingMode: 'auto' }
+    //   }, {
+    //     boundsAutoApply: true,
+
+    //     // Отключаем стандартные зелёные иконки
+    //     wayPointStartVisible:   false,
+    //     wayPointFinishVisible:  false,
+    //     viaPointVisible:        false
+    //   });
+
+    //   map.geoObjects.add(multiRoute);
+
+    //   // Рисуем свои иконки поверх
+    //   points.forEach(coord => {
+    //     map.geoObjects.add(new ymaps.Placemark(
+    //       coord,
+    //       {}, 
+    //       {
+    //         iconLayout:      'default#image',
+    //         iconImageHref:   'marker3.png',
+    //         iconImageSize:   [25, 25],
+    //         iconImageOffset: [-12, -25]
+    //       }
+    //     ));
+    //   });
+    // });
+
+
+    ymaps.ready(() => {
+      const points = [
+        // [36.8512, 10.2270],
+        [36.611325, 10.270791],
+        [36.416234, 10.123692],
+        [33.922110, 8.127582],
+        [33.460457, 9.024769],
+        [35.524679, 11.038986],
+        [36.393769, 10.613612],
+        // [36.85776034373302, 10.329399786035959],
+        [36.870586, 10.346993],
+        // [36.405003, 10.145722],
+        [35.680695, 10.103492],
+        [35.290241, 10.705382]
+      ];
+
+      points.forEach(([lat, lon]) => {
+        map.geoObjects.add(new ymaps.Placemark([lat, lon], {}, {
+          iconLayout:      'default#image',
+          iconImageHref:   'marker3.png',
+          iconImageSize:   [25, 25],
+          iconImageOffset: [-12, -25],
+
+          // zIndexAuto: false,
+          // zIndex: 1000,
+          // zIndexHover: 2000
+        }));
+      });
     });
 
-    map.geoObjects.add(route);
   });
 
   // расписание -----------------------
