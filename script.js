@@ -18,35 +18,38 @@ document.addEventListener('DOMContentLoaded', () => {
   const gPrev = document.querySelector('.gallery__btn--prev');
   const gNext = document.querySelector('.gallery__btn--next');
 
-  const pPrev = popup.querySelector('.popup-prev');
-  const pNext = popup.querySelector('.popup-next');
+  // const pPrev = popup.querySelector('.popup-prev');
+  // const pNext = popup.querySelector('.popup-next');
 
   const list = document.querySelector('.list_of_photo');
   const items = Array.from(list.querySelectorAll('.photo'));
   let current = 0;
   let popupOpen = false;
 
+  // const itemWidth = items[0].offsetWidth + parseFloat(getComputedStyle(list).gap || '0');
+  
   function scrollToCurrent() {
-    const target = items[current];
+    const target = items[current*4];
     target.scrollIntoView({inline: 'start', block: 'nearest', behavior: 'smooth'});
+    // list.scrollBy({ left: itemWidth*4, behavior: 'smooth' });
   }
 
   function updateButtons() {
     const atStart = (current == 0);
-    const atEnd = (current == items.length - 1);
+    const atEnd = (current == 2);
 
     gPrev.classList.toggle('hidden', atStart);
     gNext.classList.toggle('hidden', atEnd);
 
-    pPrev.classList.toggle('hidden', atStart);
-    pNext.classList.toggle('hidden', atEnd);
+    // pPrev.classList.toggle('hidden', atStart);
+    // pNext.classList.toggle('hidden', atEnd);
   }
 
   function renderPopup() {
     popupContent.innerHTML = '';
     const img = items[current].querySelector('img').cloneNode(true);
     popupContent.appendChild(img);
-    updateButtons();
+    // updateButtons();
   }
 
   function openPopup(idx) {
@@ -54,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     popupOpen = true;
     renderPopup();
     popup.classList.remove('hidden');
-    scrollToCurrent();
+    // scrollToCurrent();
   }
 
   function closePopup() {
@@ -65,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   items.forEach((item, i) => {
     item.addEventListener('click', () => {
-      openPopup(i);
+      openPopup(Math.floor(i / 4));
     });
   });
 
@@ -94,8 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
   gPrev.addEventListener('click', goPrev);
   gNext.addEventListener('click', goNext);
 
-  pPrev.addEventListener('click', goPrev);
-  pNext.addEventListener('click', goNext);
+  // pPrev.addEventListener('click', goPrev);
+  // pNext.addEventListener('click', goNext);
 
   popupClose.addEventListener('click', closePopup);
   
@@ -388,14 +391,14 @@ document.addEventListener('DOMContentLoaded', () => {
     ymaps.ready(() => {
       const points = [
         // [36.8512, 10.2270],
-        [36.611325, 10.270791],
+        // [36.611325, 10.270791],
         [36.416234, 10.123692],
         [33.922110, 8.127582],
         [33.460457, 9.024769],
         [35.524679, 11.038986],
         [36.393769, 10.613612],
         // [36.85776034373302, 10.329399786035959],
-        [36.870586, 10.346993],
+        // [36.870586, 10.346993],
         // [36.405003, 10.145722],
         [35.680695, 10.103492],
         [35.290241, 10.705382]

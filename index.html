@@ -5,221 +5,222 @@
   <title>Северная африка</title>
   <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <meta name="description" content="Путешествия в Северную Африку">
-  <meta name="keywords" content="Путешествия, Северная, Африка">
+  <meta name="description" content="Тунис">
+  <meta name="keywords" content="Путешествия, Северная Африка, Тунис">
   <meta name="author" content="Курченко Матвей">
   <script src="https://api-maps.yandex.ru/2.1/?apikey=3207a759-8710-4d74-9efc-3bb4aa2d18f8&lang=ru_RU" type="text/javascript"></script>
   <script src="script.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header id = "header">
     <nav>
       <ul class="menu">
-        <li><a href="#start">В начало</a></li>
-        <li><a href="#tours">Туры</a></li>
-        <li><a href="#list_of_photo">Снимки путешествий</a></li>
+        <li><a href="#intro">В начало</a></li>
+        <li><a href="#tour">Программа тура</a></li>
+        <li><a href="#gallery">Снимки путешествий</a></li>
         <li><a href="#team">Наша команда</a></li>
+        <li><a href="#form">Связаться с нами</a></li>
         <li><a href="#faq">Вопросы и ответы</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="bg-image-block" id = "start">
-    <h1>Путешествие в Северную Африку</h1>
-    <div class="contact_us">
-      <h2>Свяжитесь с нами</h2>
-      <a href="#"><img src="telegram.svg" alt="tg"></a>
-    </div>
-  </section>
+  <div class="intro" id="intro">
+    <div class="short_description">
+      <h2>
+        Мозаика Туниса: Путешествие сквозь века
+      </h2>
+      <p>
+        Откройте для себя Тунис — страну, где смешались античность,<br> арабская культура и средиземноморский колорит.<br> 
+        Авторские туры с погружением в историю,<br> традиции и природу.
+      </p>
+      <a href="#form" class="call_us">
+        Оставить заявку
+      </a>
 
-  <div class="description_tour">
-    <div class="description_day">
-      <div class="card">
-        <p>
-          Незабываемое путешествие в Северную Африку с персональным гидом.<br><br>
-          Преимущества: маленькая группа, комфортный транспорт, уникальные локации.
-        </p>
-      </div>
-      <div id="map"></div>
     </div>
 
-    <!-- <div class="description_day">
-      <div class="card">
-        <p>
-        День 1: Прибытие в Тунис<br><br>
-          •	Трансфер из аэропорта Тунис-Карфаген в гостевой дом Dar Salima à Morneg (15 км от аэропорта). 
-          Гостевой дом Dar Salima à Morneg  сочетает в себе традиционный тунисский стиль и современный комфорт, 
-          предлагая гостям аутентичную атмосферу и высокий уровень сервиса. Двухместные номера (Twin/Double) Площадь: ~20–25 м².
-          Оснащение:Две односпальные кровати или одна двуспальная - Кондиционер и отопление - Бесплатный Wi-Fi -Сейф, фен,
-            туалетные принадлежности - Ванная комната с душем - Интерьер: Традиционные тунисские элементы (керамика, деревянная мебель),
-            пастельные тона, текстиль ручной работы - Бассейн и хамам.<br><br>
-          •	Вечер: Отдых у бассейна, знакомство с местной кухней.
-        </p>
-      </div>
-      <div class="card">
-        <p>
-        картинка
-        </p>
-      </div>
-    </div> -->
+    <div class="phrasa">
+      <p>
+        <!-- "Представьте, как вы пьете мятный чай на террасе с видом на дюны, а вокруг — только шепот пустыни..." -->
+        "Античные руины, бело-голубые города, оазисы пустыни и роскошь традиционных гостевых домов — все это ждет вас в нашем авторском туре."
+      </p>
+    </div>
+
+    <!-- <div id="map"></div> -->
   </div>
 
 
 
-  <div class="trip-schedule">
-    <div class="trip-day">
-      <button class="trip-header">
-        <div class="trip-headline">
-          <span class="trip-date">1 день</span>
-          <span class="trip-separator">|</span>
-          <span class="trip-title">Прибытие в Тунис</span>
-        </div>
-      </button>
 
-      <div class="trip-details">
-        <p>
+  <div class="trip_full" id="tour">
+    <div class="trip-schedule">
+      <div class="trip-day">
+        <button class="trip-header">
+          <div class="trip-headline">
+            <span class="trip-date">1 день</span>
+            <span class="trip-separator">|</span>
+            <span class="trip-title">Прибытие в Тунис</span>
+          </div>
+        </button>
+
+        <div class="trip-details">
+          <p>
           •	Трансфер в гостевой дом Dar Salima à Morneg — уютный уголок в традиционном стиле.<br>
           •	Отдых у бассейна и знакомство с тунисской кухней.
-        </p>
-      </div>
-    </div>
-
-
-    <div class="trip-day">
-      <button class="trip-header">
-        <div class="trip-headline">
-          <span class="trip-date">2 день</span>
-          <span class="trip-separator">|</span>
-          <span class="trip-title">Исследование Туниса</span>
+          </p>
         </div>
-      </button>
-
-      <div class="trip-details">
-        <p>
-          •	Медина Туниса: лабиринты улочек и восточные базары.<br>
-          •	Карфаген: римский театр и история Ганнибала.<br>
-          •	Сиди-бу-Саид: бело-голубой рай над заливом.
-        </p>
       </div>
-    </div>
 
-    
-    <div class="trip-day">
-      <button class="trip-header">
-        <div class="trip-headline">
-          <span class="trip-date">3 день</span>
-          <span class="trip-separator">|</span>
-          <span class="trip-title">Загуан — Храм Воды</span>
+
+      <div class="trip-day">
+        <button class="trip-header">
+          <div class="trip-headline">
+            <span class="trip-date">2 день</span>
+            <span class="trip-separator">|</span>
+            <span class="trip-title">Исследование Туниса</span>
+          </div>
+        </button>
+
+        <div class="trip-details">
+          <p>
+            •	Медина Туниса: лабиринты улочек и восточные базары.<br>
+            •	Карфаген: римский театр и история Ганнибала.<br>
+            •	Сиди-бу-Саид: бело-голубой рай над заливом.
+          </p>
         </div>
-      </button>
-
-      <div class="trip-details">
-        <p>
-          •	Римский акведук и мастер-класс по цветочной дистилляции.<br>
-          •	Ночь в Dar Zaghouan — колониальном доме с садом.
-        </p>
       </div>
-    </div>
 
+      
+      <div class="trip-day">
+        <button class="trip-header">
+          <div class="trip-headline">
+            <span class="trip-date">3 день</span>
+            <span class="trip-separator">|</span>
+            <span class="trip-title">Загуан — Храм Воды</span>
+          </div>
+        </button>
 
-    <div class="trip-day">
-      <button class="trip-header">
-        <div class="trip-headline">
-          <span class="trip-date">4 день</span>
-          <span class="trip-separator">|</span>
-          <span class="trip-title">Кайруан и Таузер</span>
+        <div class="trip-details">
+          <p>
+            •	Римский акведук и мастер-класс по цветочной дистилляции.<br>
+            •	Ночь в Dar Zaghouan — колониальном доме с садом.
+          </p>
         </div>
-      </button>
-
-      <div class="trip-details">
-        <p>
-          •	Мечеть Укба ибн Нафи — духовное сердце Туниса.<br>
-          •	Оазис Таузера и роскошный Dar el Sultan.
-        </p>
       </div>
-    </div>
 
 
-    <div class="trip-day">
-      <button class="trip-header">
-        <div class="trip-headline">
-          <span class="trip-date">5 день</span>
-          <span class="trip-separator">|</span>
-          <span class="trip-title">Пустыня Сахара</span>
+      <div class="trip-day">
+        <button class="trip-header">
+          <div class="trip-headline">
+            <span class="trip-date">4 день</span>
+            <span class="trip-separator">|</span>
+            <span class="trip-title">Кайруан и Таузер</span>
+          </div>
+        </button>
+
+        <div class="trip-details">
+          <p>
+            •	Мечеть Укба ибн Нафи — духовное сердце Туниса.<br>
+            •	Оазис Таузера и роскошный Dar el Sultan.
+          </p>
         </div>
-      </button>
-
-      <div class="trip-details">
-        <p>
-          •	Прогулка на верблюдах, соленое озеро Шотт-эль-Джерид.<br>
-          •	Ночь в берберском доме Murmure de Civilisation.
-        </p>
       </div>
-    </div>
 
 
-    <div class="trip-day">
-      <button class="trip-header">
-        <div class="trip-headline">
-          <span class="trip-date">6 день</span>
-          <span class="trip-separator">|</span>
-          <span class="trip-title">Берберские города и Махдия</span>
+      <div class="trip-day">
+        <button class="trip-header">
+          <div class="trip-headline">
+            <span class="trip-date">5 день</span>
+            <span class="trip-separator">|</span>
+            <span class="trip-title">Пустыня Сахара</span>
+          </div>
+        </button>
+
+        <div class="trip-details">
+          <p>
+            •	Прогулка на верблюдах, соленое озеро Шотт-эль-Джерид.<br>
+            •	Ночь в берберском доме Murmure de Civilisation.
+          </p>
         </div>
-      </button>
-
-      <div class="trip-details">
-        <p>
-          •	Подземные жилища Матматы и рыбацкий порт Махдии.
-        </p>
       </div>
-    </div>
 
 
-    <div class="trip-day">
-      <button class="trip-header">
-        <div class="trip-headline">
-          <span class="trip-date">7 день</span>
-          <span class="trip-separator">|</span>
-          <span class="trip-title">Эль-Джем</span>
+      <div class="trip-day">
+        <button class="trip-header">
+          <div class="trip-headline">
+            <span class="trip-date">6 день</span>
+            <span class="trip-separator">|</span>
+            <span class="trip-title">Берберские города и Махдия</span>
+          </div>
+        </button>
+
+        <div class="trip-details">
+          <p>
+            •	Подземные жилища Матматы и рыбацкий порт Махдии.
+          </p>
         </div>
-      </button>
-
-      <div class="trip-details">
-        <p>
-          •	Амфитеатр, превосходящий Колизей.
-        </p>
       </div>
-    </div>
 
 
-    <div class="trip-day">
-      <button class="trip-header">
-        <div class="trip-headline">
-          <span class="trip-date">8 день</span>
-          <span class="trip-separator">|</span>
-          <span class="trip-title">Отъезд</span>
+      <div class="trip-day">
+        <button class="trip-header">
+          <div class="trip-headline">
+            <span class="trip-date">7 день</span>
+            <span class="trip-separator">|</span>
+            <span class="trip-title">Эль-Джем</span>
+          </div>
+        </button>
+
+        <div class="trip-details">
+          <p>
+            •	Амфитеатр, превосходящий Колизей.
+          </p>
         </div>
-      </button>
-
-      <div class="trip-details">
-        •	Трансфер в аэропорт.
       </div>
-    </div>
 
-    <div class="trip-day">
-      <button class="trip-header">
-        <div class="trip-headline">
-          <span class="trip-title">Дополнительная информация</span>
+
+      <div class="trip-day">
+        <button class="trip-header">
+          <div class="trip-headline">
+            <span class="trip-date">8 день</span>
+            <span class="trip-separator">|</span>
+            <span class="trip-title">Отъезд</span>
+          </div>
+        </button>
+
+        <div class="trip-details">
+          <P>
+            •	Трансфер в аэропорт.
+          </P>
         </div>
-      </button>
+      </div>
 
-      <div class="trip-details">
-        •	Группа: 6 человек + гид/водитель.<br>
-        Логистика: Все переезды согласованы по времени, минивэн оснащен кондиционером.<br>
-        Особенности: Акцент на культурные и природные достопримечательности, комфортное размещение в традиционных домах.
+      <div class="trip-day">
+        <button class="trip-header">
+          <div class="trip-headline">
+            <span class="trip-title">Преимущества</span>
+          </div>
+        </button>
+
+        <div class="trip-details">
+          <p>
+          •	<span class="bold">Комфорт:</span> Размещение в аутентичных гостевых домах с бассейнами и хамамами.<br>
+          •	<span class="bold">Гид:</span> Русскоговорящий гид и минивэн с кондиционером.<br>
+          •	<span class="bold">Питание:</span> Завтраки и ужины с местной кухней.<br>
+          •	<span class="bold">Маршрут:</span> Продуман до минуты — никаких очередей и утомительных переездов.
+          </p>
+          <!-- •	Группа: 6 человек + гид/водитель.<br>
+          Логистика: Все переезды согласованы по времени, минивэн оснащен кондиционером.<br>
+          Особенности: Акцент на культурные и природные достопримечательности, комфортное размещение в традиционных домах. -->
+        </div>
       </div>
     </div>
+    <div id="map"></div>
   </div>
+
 
 
 
@@ -258,18 +259,37 @@
     </div>
   </section> -->
 
-  <section class="gallery">
+  <section class="gallery" id="gallery">
     <button class="gallery__btn gallery__btn--prev">‹</button>
+    
     <ul class="list_of_photo">
-      <li class="photo"><img src="img1.jpg" alt="Фото"></li>
+      <!-- <li class="hollow"></li> -->
+      <!-- <li class="photo"><img src="img1.jpg" alt="Фото"></li>
       <li class="photo"><img src="img2.jpg" alt="Фото"></li>
       <li class="photo"><img src="img3.jpg" alt="Фото"></li>
       <li class="photo"><img src="img4.jpg" alt="Фото"></li>
       <li class="photo"><img src="img1.jpg" alt="Фото"></li>
       <li class="photo"><img src="img2.jpg" alt="Фото"></li>
       <li class="photo"><img src="img3.jpg" alt="Фото"></li>
-      <li class="photo"><img src="img4.jpg" alt="Фото"></li>
+      <li class="photo"><img src="img4.jpg" alt="Фото"></li> -->
+      <li class="photo"><img src="MAR/1.avif" alt="Фото"></li>
+      <li class="photo"><img src="MAR/2.avif" alt="Фото"></li>
+      <li class="photo"><img src="MAR/3.avif" alt="Фото"></li>
+      <!-- <li class="photo"><img src="MAR/4.avif" alt="Фото"></li> -->
+      <li class="photo"><img src="MAR/5.avif" alt="Фото"></li>
+      <li class="photo"><img src="MAR/6.avif" alt="Фото"></li>
+      <li class="photo"><img src="MAR/7.avif" alt="Фото"></li>
+      <li class="photo"><img src="MAR/8.avif" alt="Фото"></li>
+      <li class="photo"><img src="MAR/9.avif" alt="Фото"></li>
+      <li class="photo"><img src="MAR/10.avif" alt="Фото"></li>
+      <li class="photo"><img src="MAR/11.avif" alt="Фото"></li>
+      <!-- <li class="photo"><img src="MAR/12.avif" alt="Фото"></li> -->
+      <!-- <li class="photo"><img src="MAR/13.avif" alt="Фото"></li> -->
+      <li class="photo"><img src="MAR/14.avif" alt="Фото"></li>
+      <li class="photo"><img src="MAR/15.avif" alt="Фото"></li>
+      <!-- <li class="hollow"></li> -->
     </ul>
+    
     <button class="gallery__btn gallery__btn--next">›</button>
   </section>
 
@@ -278,8 +298,8 @@
     <!-- <button class="popup-prev">‹</button>
     <button class="popup-next">›</button> -->
     <button class="popup-close">×</button>
-    <button class="popup-prev">‹</button>
-    <button class="popup-next">›</button>
+    <!-- <button class="popup-prev">‹</button>
+    <button class="popup-next">›</button> -->
   </div>
 
   
@@ -295,7 +315,7 @@
 
 
   <section class="team" id = "team">
-    <h2>Команда<br>Cool Trip Makers</h2>
+    <h2>Наша команда</h2>
 
     <div class="team-members">
       <div class="member">
@@ -333,7 +353,7 @@
   </section>
 
 
-  <div class="form-background">
+  <div class="form-background" id="form">
     <div class="contact-form">
       <div class="Label">
         <p>Отправьте форму и мы с вами свяжемся</p>

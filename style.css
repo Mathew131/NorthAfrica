@@ -4,20 +4,30 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
 /* меню */
 
 header {
-  background: #d6ddc7;
-  padding: 2vh 0vw 2vh 6vw;
-  z-index: 1000;
-  width: 100%;
   position: fixed;
+  top: 0;
+  left: 0;
+  width: 99vw;
+  background: #c5d1a9;
+  /* background: #d6ddc7; */
+  /* background: #c1dbd9; */
+  /* background:#ebd3a7;  */
+  padding: 2vh 0 2vh 6vw;
+  z-index: 1000;
+  height: 50px;          /* явно задаём высоту */
 }
 
 .menu {
   display: flex;
   list-style: none;
-  gap: 16px;
+  gap: 22px;
   padding: 0;
   margin: 0;
 }
@@ -25,85 +35,111 @@ header {
 .menu a {
   text-decoration: none;
   color: #333;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
 }
 
-/* главная картинка, волна - снизу файла */
 
-.bg-image-block {
-  width: 100%;
-  height: 200px;
-  background: url('travel.jpg') no-repeat center center fixed;
-  /* background-image: url('travel.jpg'); */
-  background-size: cover;
-  background-position: center;
-  color: white;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
+.intro {
+  min-height: calc(100vh);  
+  padding: calc(50px + 2.5vh) 0px 0px 0px;
+  background: black url("phone2.jpg") no-repeat center center;
+  /* background-size: contain; */
+    /* размер фонового слоя: чем больше %, тем сильнее «зум» */
+  background-size: 115% auto;
+  /* смещение по горизонтали и вертикали — проценты от полной ширины/высоты */
+  background-position: 0% 12%;
 
-.bg-image-block h1 {
-
-  font-size: 26px;
-}
-
-.bg-image-block h2 {
-  font-size: 16px;
-}
-
-.bg-image-block a img {
-  width: 30px;
-  height: 30px;
-  margin-right: 10px;
-}
-
-.contact_us {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-.contact_us img {
-  margin: 5px 0px 0px 20px;
-}
-
-.bg-image-block h1 {
-  margin: 45px 0px 0px 0px;
-}
-
-/* яндекс карты */
-
-.description_tour {
-  display: flex;
-  flex-direction: column;
+  /* justify-content: center;
+  align-items: center; */
 }
 
 .short_description {
-  margin: auto;
+  padding: 17vh 6vw;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  /* justify-content: center;
+  align-items: center; */
 }
 
 .short_description p {
+  /* padding-top: 50px; */
+  font-size: 18px;
   color: white;
-  font-size: 30;
 }
 
-.description_day {
-  padding: 2.5vw 2.5vw 2.5vh 2.5vw;
-  background: #9da16c;
+.short_description h2 {
+  white-space: nowrap;
+  font-size: 30px;
+  color: white;
+
+  font-family: 'Playfair Display', serif;
+}
+
+
+
+.call_us {
+  display: inline-block;
+  width: 200px;
+  padding: 14px 20px;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border: 1px solid white;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background .3s, transform .1s ease, box-shadow .1s ease;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.call_us:hover {
+  background: rgba(255,255,255,0.6);
+}
+
+.call_us:active {
+  transform: scale(0.97);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+
+
+
+.phrasa p {
+  margin: 23vh 2vw 0vh 22vw;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+
+  
+}
+
+
+
+/* Описание поездки --------------------------------------------- */
+.trip_full {
+  scroll-margin-top: 50px; /* Высота хедера */
+  
   display: flex;
   flex-direction: row;
+  /* justify-content: center;
+  align-items: center; */
+  /* background: #fdf4e3; */
+  background: #d6ddc7;
+
+  padding: 0 10vw;
 }
 
+
 #map {
-  width: 30vw;
+  width: 40vw;
   height: 60vh;
-  margin-left: auto;
+  margin: 15vh 0vw 15vh 5vw;
   
   border-radius: 10px;
   overflow: hidden;
@@ -111,35 +147,11 @@ header {
   display: block;
 }
 
-
-.card {
-  width: 45vw;
-  height: 50vh;
-  margin: 0px 20px 0px 0px;
-  /* margin: 2.5vw 2.5vw 2.5vh 2.5vw; */
-  background: #fef3e0;
-  border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-
-  justify-content: center; /*чтобы текст был по центру */
-  align-items: center; /*чтобы текст был по центру */
-}
-
-.card p {
-  text-align: center;
-  font-size: 15px;
-  margin: 0px 15px 0px 15px;
-}
-
-/* Описание поездки --------------------------------------------- */
-
 .trip-schedule {
-  background: #d6ddc7;
-  padding: 5vh 10vw;
-  font-family: sans-serif;
+  /* background: #d6ddc7; */
+  width: 65vw;
+  padding: 6vh 0vw 6vh 0vw;
+  /* font-family: sans-serif; */
 }
 
 /* каждый день */
@@ -148,7 +160,6 @@ header {
   padding: 16px 0;
 }
 
-/* заголовок дня — кликабельный, без внутреннего <span> для иконки */
 .trip-header {
   width: 100%;
   background: none;
@@ -190,9 +201,9 @@ header {
   overflow: hidden;
   /* transition: max-height 0.5s ease; */
   font-size: 14px;
-  line-height: 1.5;
+  /* line-height: 1.5; */
   margin-top: 8px;
-  padding-left: 20px;   /* выравнивание текста с заголовком */
+  /* padding-left: 20px;   выравнивание текста с заголовком */
 }
 
 /* открытие */
@@ -204,8 +215,12 @@ header {
   text-align: left;
   font-size: 15px;
   margin: 10px 10px 10px 10px;
+
 }
 
+.bold {
+  font-weight: bold;
+}
 
 
 /* карточки */
@@ -279,8 +294,11 @@ header {
 /* на телефона по одной фотографии показывать */
 
 .gallery {
+  scroll-margin-top: 50px; /* Высота хедера */
+
   position:relative;
-  background:#b19a64; 
+  /* background:#b19a64;  */
+  background:#fae6c0; 
   padding: 10vh 6vw 10vh 6vw;
 }
 
@@ -288,9 +306,14 @@ header {
   overflow: hidden; 
 }
 
+/* .hollow {
+  width: 1vw;
+} */
+
 .list_of_photo {
   overflow: hidden; 
-  padding: 2vh 2vw 2vh 2vw; /* чтобы увеличение картинки не обрезалась */
+  /* чтобы увеличение картинки не обрезалась */
+  padding: 2vh 0vw 2vh 0vw; 
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -303,6 +326,7 @@ header {
 
 .photo {
   flex: 0 0 auto;
+  /* margin: 0vh 0vw 0vh 0vw;  */
   width: 21vw;
   aspect-ratio: 1/1;
   overflow: hidden;
@@ -390,20 +414,24 @@ header {
   user-select: none;
 }
 
-.popup-prev  { left: 30px; }
-.popup-next  { right: 30px; }
+/* .popup-prev  { left: 30px; }
+.popup-next  { right: 30px; } */
 .popup-close { top: 20px; right: 30px; font-size: 2.5rem; }
 
 
 /* team */
 
 .team {
-  background-color: #9da16c;
-  /* background-color: #7a8552; */
+  scroll-margin-top: 50px; /* Высота хедера */
+
+  /* background-color: #9da16c; */
+  background: #d6ddc7;
   padding: 60px 20px;
   text-align: center;
-  font-family: sans-serif;
+  /* font-family: sans-serif; */
   color: #000;
+
+  height: calc(100vh - 40px);
 }
 
 .team h2 {
@@ -441,8 +469,8 @@ header {
 .member p {
   font-size: 16px;
   line-height: 1.5;
-  color: white;
-  font-family: arial; /* выбрать, может быть взят с сайта */
+  /* color: white; */
+  /* font-family: arial; */
 }
 
 .socials {
@@ -455,23 +483,33 @@ header {
   margin-right: 10px;
 }
 
-/* feedback */
+/* form */
 .form-background {
-  background: url('travel.jpg') no-repeat center center fixed; /* fixed добавляет эффект прокрутки */
-  background-size: cover;
-  height: 100vh;
-  width: 100vw;
+  scroll-margin-top: 50px; /* Высота хедера */
+  
+  position: relative;
+  background:
+    linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+    url('koncepcia-putesestvia-s-sostavom-razlicnyh-elementov.jpg')
+      no-repeat center center fixed;
+  background-size: 100% auto;
+  background-position: 0% 20%;
+  height: calc(100vh - 40px);
+  width: 99vw;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
 }
-
 .contact-form {
   width: 100%;
   max-width: 600px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(4px);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  padding: 30px;
 }
-
 .contact-form form {
   display: flex;
   flex-direction: column;
@@ -514,8 +552,8 @@ textarea::placeholder {
 
 input:focus,
 textarea:focus {
-  border: 1px solid #f0d330;
-  box-shadow: 0 0 8px rgba(237, 181, 27, 0.6);
+  border: 1px solid #f2da54;
+  box-shadow: 0 0 8px #f2da54;
 }
 
 .Label {
@@ -533,7 +571,7 @@ textarea:focus {
 input[type="date"] {
   background: transparent;
   color: rgba(255, 255, 255, 1);
-  border: 1px solid white;
+  /* border: 1px solid white; */
   padding: 12px;
 }
 
@@ -542,13 +580,28 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   opacity: 0.75;
 }
 
+/* Chrome, Safari, Edge, Opera   чтобы отключить счетчик */ 
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox   чтобы отключить счетчик */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
 /* FAQ */
 
 .faq {
+  scroll-margin-top: 50px; /* Высота хедера */
+
   background: #d6ddc7;
   /* background: #e3ebcf; */
   padding: 5vh 10vw;
-  font-family: sans-serif;
+  /* font-family: sans-serif; */
 }
 
 .faq h2 {
@@ -605,9 +658,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   background-color: #7b8561;
   color: #000;
   padding: 20px 0px 20px 0px;
-  font-family: sans-serif;
+  /* font-family: sans-serif; */
   font-size: 14px;
-  height: 100px;
+  height: 75px;
 
   display: flex;  
   align-items: center;
