@@ -155,14 +155,15 @@ document.addEventListener('DOMContentLoaded', () => {
         "Комментарий": comment
       })
     })
-    .then(res => {
-      if (res.ok) {
-        alert("Успешно отправлено!");
-        form.reset();
-      } else {
-        alert("Ошибка при отправке");
-      }
-    });
+    form.reset();
+    // .then(res => {
+    //   if (res.ok) {
+    //     alert("Успешно отправлено!");
+    //     form.reset();
+    //   } else {
+    //     alert("Ошибка при отправке");
+    //   }
+    // });
   });
 
 
