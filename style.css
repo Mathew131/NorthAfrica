@@ -332,6 +332,8 @@ header {
   overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+
+  cursor: pointer;
 }
 
 .photo img {
@@ -345,30 +347,36 @@ header {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.photo:hover {
+/* .photo:hover {
   transform: scale(1.05);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-}
+} */
 
 /* стрелки */
 .gallery__btn {
   position: absolute;
-  top: 50%; /* Элемент на 50 процентов ниже родителя */
-  transform: translateY(-50%); /* Элемент выше на 50 процентов от самого себя */
-
+  top: 50%;
+  transform: translateY(-50%);
   width: 40px;
   height: 40px;
   border: none;
   border-radius: 50%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.4);
   color: #fff;
   font-size: 1.5rem;
   cursor: pointer;
-  /* z-index: 10; */
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
 }
+
+.gallery__btn:hover {
+  background: rgba(0, 0, 0, 0.5);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
 
 .gallery__btn--prev { 
   left: 2vw; 

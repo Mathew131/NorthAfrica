@@ -45,17 +45,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // pNext.classList.toggle('hidden', atEnd);
   }
 
-  function renderPopup() {
+  function renderPopup(current_op) {
     popupContent.innerHTML = '';
-    const img = items[current].querySelector('img').cloneNode(true);
+    const img = items[current_op].querySelector('img').cloneNode(true);
     popupContent.appendChild(img);
     // updateButtons();
   }
 
   function openPopup(idx) {
-    current = idx;
+    // current = idx;
     popupOpen = true;
-    renderPopup();
+    renderPopup(idx);
     popup.classList.remove('hidden');
     // scrollToCurrent();
   }
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   items.forEach((item, i) => {
     item.addEventListener('click', () => {
-      openPopup(Math.floor(i / 4));
+      openPopup(Math.floor(i));
     });
   });
 
